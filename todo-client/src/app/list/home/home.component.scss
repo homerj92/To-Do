@@ -1,0 +1,12 @@
+.insert-button {
+  margin: 1em;
+  float: right;
+}
+
+.list-container {
+  padding: 3em;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-column-gap: 3.33%;
+  grid-row-gap: 60px;
+}

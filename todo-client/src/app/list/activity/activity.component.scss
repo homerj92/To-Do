@@ -1,0 +1,35 @@
+.activity-container {
+  border: 1px solid transparent;
+  background: #484848;
+  border-radius: 0.3em;
+  box-shadow: 0 8px 6px -6px rgb(0 0 0 / 20%);
+  padding: 0.3em;
+  margin-top: 1em;
+
+  .activity, .activity-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .activity-description {
+    margin-left: 0.3em;
+    span {
+      margin-left: 1em;
+    }
+  }
+
+  .activity-action {
+    button {
+      min-width: 20px;
+      padding: 0 10px;
+    }
+  }
+}
+
+::ng-deep .mat-checkbox-frame,
+ ::ng-deep .mat-checkbox-background {
+  border-radius: 50% !important;
+}
+
+

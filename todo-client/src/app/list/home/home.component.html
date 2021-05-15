@@ -1,0 +1,39 @@
+<app-toolbar></app-toolbar>
+<ng-container *ngIf="(lists$ | async) as lists">
+  <app-spinner *ngIf="loading$ | async" class="loading-shade"></app-spinner>
+  <button mat-raised-button class="insert-button" *ngIf="lists.length" (click)="upsertList()">
+    <mat-icon style="font-size: 20px;" class="material-icons-two-tone">add_circle_outline</mat-icon>
+    Create List
+  </button>
+  <div class="list-container">
+    <ng-container *ngIf="lists.length else emptyLists">
+      <ng-container *ngFor="let list of lists">
+        <app-list [list]="list" (editList)="upsertList($event)"></app-list>
+      </ng-container>
+    </ng-container>
+
+    <ng-template #emptyLists>
+      <div class="card-container">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image">
+              <mat-icon class="material-icons-two-tone">list</mat-icon>
+            </div>
+            <mat-card-title>Welcome</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Create your first list!</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="upsertList()">
+              <mat-icon style="font-size: 20px;" class="material-icons-two-tone">add_circle_outline</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </ng-template>
+  </div>
+</ng-container>
+
+
+

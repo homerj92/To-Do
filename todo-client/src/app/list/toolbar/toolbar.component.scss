@@ -1,0 +1,17 @@
+mat-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.section-title, button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    margin-left: 0.5em;
+  }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

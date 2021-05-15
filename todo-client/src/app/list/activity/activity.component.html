@@ -1,0 +1,18 @@
+<div class="activity-container">
+  <div class="activity">
+    <div class="activity-description">
+      <mat-checkbox [checked]="activity?.done" (change)="changeEvent($event.checked)"></mat-checkbox>
+      <span>{{activity?.description}}</span>
+    </div>
+
+    <div class="activity-action">
+      <button mat-button>
+        <mat-icon style="font-size: 18px;" class="material-icons-two-tone" (click)="editActivity.emit(activity)">edit</mat-icon>
+      </button>
+      <button mat-button>
+        <mat-icon style="font-size: 18px;"  class="material-icons-two-tone" (click)="delete()">delete</mat-icon>
+      </button>
+    </div>
+
+  </div>
+</div>

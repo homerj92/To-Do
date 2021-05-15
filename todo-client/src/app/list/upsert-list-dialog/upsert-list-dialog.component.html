@@ -1,0 +1,22 @@
+<app-spinner *ngIf="loading$ | async" class="loading-shade"></app-spinner>
+<h2 mat-dialog-title>{{list ? 'Edit List' : 'Create List'}}</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form">
+    <mat-form-field class="full-width">
+      <input matInput formControlName="name" placeholder="Name" required>
+      <mat-error *ngIf="!form.get('name').valid">
+        Required field
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput formControlName="description" placeholder="Description" required>
+      <mat-error *ngIf="!form.get('description').valid">
+        Required field
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [disabled]="form.invalid" (click)="upsert()">Save</button>
+</mat-dialog-actions>

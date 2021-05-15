@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div class="section-title">
+      <mat-icon>fact_check</mat-icon>
+      <span>To Do</span>
+    </div>
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+      <span>{{username$| async}}</span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="editProfile()">Profile</button>
+      <button (click)="logout()" mat-menu-item>Logout</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>

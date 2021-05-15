@@ -1,0 +1,16 @@
+
+<h2 mat-dialog-title>Profile</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form">
+    <mat-form-field class="full-width">
+      <input matInput formControlName="username" placeholder="username" required>
+      <mat-error *ngIf="!form.get('username').valid">
+        Required field
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button [disabled]="form.invalid" (click)="update()">Save</button>
+</mat-dialog-actions>

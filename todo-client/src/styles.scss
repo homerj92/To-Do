@@ -1,0 +1,54 @@
+@import '~@angular/material/theming';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+$custom-typography: mat-typography-config($font-family: 'New Tegomin', $headline: mat-typography-level(32px, 48px, 700), $body-1: mat-typography-level(16px, 24px, 500));
+@include mat-base-typography($custom-typography);
+@include mat-checkbox-typography($custom-typography);
+@include angular-material-typography($custom-typography);
+@include mat-core($custom-typography);
+
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'New Tegomin', serfif, sans-serif;
+  background: #676767fc;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+.mat-form-field-label {
+  color: white !important;
+}
+
+.mat-focused .mat-form-field-label {
+  color: white !important;
+}
+
+.mat-form-field-underline {
+  background-color: white !important;
+}
+
+.mat-form-field-ripple {
+  background-color: white !important;
+}
+
+.loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,34 @@
+<div class="mat-dialog-header">
+  <h2 mat-dialog-title>{{list?.name}}</h2>
+  <button mat-button mat-dialog-close>
+    <mat-icon style="font-size: 20px;"  class="material-icons-two-tone">close</mat-icon>
+  </button>
+</div>
+
+<mat-dialog-content class="mat-typography">
+  <ng-container *ngIf="(activities$ | async) as activities">
+    <ng-container *ngFor="let activity of activities">
+      <app-activity [activity]="activity" (editActivity)="edit($event)"></app-activity>
+    </ng-container>
+  </ng-container>
+</mat-dialog-content>
+<mat-dialog-actions>
+<div class="upsert-activity">
+  <form [formGroup]="form">
+    <mat-form-field class="full-width">
+      <input matInput formControlName="description" placeholder="{{activity ? 'Edit activity' : 'Add activity'}}">
+      <button *ngIf="!activity; else editActivity" mat-button matSuffix mat-icon-button [disabled]="form.invalid" (click)="upsert('insert')">
+        <mat-icon style="font-size: 20px;" class="material-icons-two-tone">add_circle_outline</mat-icon>
+      </button>
+      <ng-template #editActivity>
+        <button mat-button matSuffix mat-icon-button [disabled]="form.invalid" (click)="upsert('update')">
+          <mat-icon style="font-size: 20px;" class="material-icons-two-tone">edit</mat-icon>
+        </button>
+        <button mat-button matSuffix mat-icon-button (click)="reset()">
+          <mat-icon style="font-size: 20px;" class="material-icons-two-tone">cancel</mat-icon>
+        </button>
+      </ng-template>
+    </mat-form-field>
+  </form>
+</div>
+</mat-dialog-actions>
