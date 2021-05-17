@@ -2,9 +2,9 @@
 
 # Installation pre-requisites
 
-    nave use 14.16.0
-    node -v
-    v14.16.0
+    Angular CLI: 11.0.2
+    Node: 14.16.0
+
 
 # Installing Mongo DB
 
