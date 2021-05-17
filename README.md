@@ -19,7 +19,7 @@
 # Installing dependencies
     Open terminal:
 
-    To-Do folder:  npm install
+    Project folder:  npm install
 
     todo-client folder: npm install
 
@@ -28,7 +28,7 @@
 
 We can start the sample application backend with the following command:
     
-    Open To-Do folder in terminal
+    Open Project folder in terminal
 
     npm start
 
