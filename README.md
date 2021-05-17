@@ -28,7 +28,7 @@
 
 We can start the sample application backend with the following command:
     
-    Open Project folder in terminal
+    Open project folder in terminal
 
     npm start
 
